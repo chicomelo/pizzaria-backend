@@ -93,59 +93,6 @@ Use o token JWT no cabeçalho:
 Authorization: Bearer <seu_token>
 ```
 
-## 📦 Exemplo de Uso da API
-
-### Login
-
-```bash
-curl -X POST http://localhost:3333/session \
-  -H "Content-Type: application/json" \
-  -d '{"email": "usuario@example.com", "password": "senha123"}'
-```
-
-### Criar Categoria
-
-```bash
-curl -X POST http://localhost:3333/category \
-  -H "Authorization: Bearer SEU_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Pizzas"}'
-```
-
-### Criar Produto (com imagem via Cloudinary)
-
-Use uma requisição `multipart/form-data` com os campos:
-
-- `name`
-- `price`
-- `description`
-- `category_id`
-- `file` (imagem)
-
-### Listar Produtos por Categoria
-
-```bash
-curl -X GET "http://localhost:3333/category/product?category_id=CATEGORY_ID"
-```
-
-### Criar Pedido
-
-```bash
-curl -X POST http://localhost:3333/order \
-  -H "Authorization: Bearer SEU_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"table": "12", "name": "Mesa Exemplo"}'
-```
-
-### Adicionar Item ao Pedido
-
-```bash
-curl -X POST http://localhost:3333/order/add \
-  -H "Authorization: Bearer SEU_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"order_id": "ORDER_ID", "product_id": "PRODUTO_ID", "amount": 2}'
-```
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT.
